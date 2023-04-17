@@ -3,11 +3,17 @@ import { UserService } from 'src/user/user.service';
 import { Location } from 'src/entities/location.entity';
 import { User } from 'src/entities/user.entity';
 import { LocationInfo } from './dto/locationInfo.dto';
+import { Repository } from 'typeorm';
+import { InjectRepository } from '@nestjs/typeorm';
 
 @Injectable()
 export class LocationService {
   private logger = new Logger('LocationService');
-  constructor(private userService: UserService) {}
+  constructor(
+    @InjectRepository(Location)
+    private readonly locationRepository: Repository(Location),
+    private userService: UserService
+    ) {}
 
   //create location
   async createLocation(user: User, locationInfo: LocationInfo): Promise<Location> {
@@ -21,6 +27,9 @@ export class LocationService {
       location.image = image;
       location.timeCreated = new Date();
       location.user = user;
+
+      await locationRepository.save();
+      this.logger.verbose(`A new location has been added by user ${user.firstName} ${user.lastName}`);
 
       return location;
     } catch (error) {
