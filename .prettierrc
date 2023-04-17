@@ -1,4 +1,11 @@
 {
+  "userTabs": true,
+  "tabWidth": 2,
   "singleQuote": true,
-  "trailingComma": "all"
+  "bracketSpacing": true,
+  "trailingComma": "none",
+  "singleAttributePerLine": false,
+  "bracketSameLine": true,
+  "parser": "typescript",
+  "printWidth": 200
 }
