@@ -7,7 +7,7 @@ import { Repository } from 'typeorm';
 
 @Injectable()
 export class UserService {
-  constructor(@InjectRepository(User) private userRepository: Repository<User>) {}
+  @InjectRepository(User) private userRepository: Repository<User>;
 
   async getUser(email: string): Promise<User> {
     return await this.userRepository.findOne({ where: { email } });

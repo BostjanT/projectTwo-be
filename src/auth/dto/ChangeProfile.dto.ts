@@ -1,4 +1,5 @@
-import { IsString, IsEmail } from 'class-validator';
+import { IsEmail, IsString } from 'class-validator';
+
 export class ChangeProfile {
   @IsString()
   firstName: string;

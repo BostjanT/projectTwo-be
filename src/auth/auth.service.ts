@@ -1,4 +1,3 @@
-import { UpdatePasswordDto } from './dto/UpdatePassword.dto';
 import { BadRequestException, HttpException, HttpStatus, Injectable, Logger, UnauthorizedException } from '@nestjs/common';
 import { UserService } from 'src/user/user.service';
 import { SignUpDto } from './dto/SignUpDto.dto';
