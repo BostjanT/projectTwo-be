@@ -11,6 +11,6 @@ import { User } from 'src/entities/user.entity';
   providers: [LocationService],
   controllers: [LocationController],
   exports: [LocationService],
-  imports: [UserModule, TypeOrmModule.forFeature([Location]), TypeOrmModule.forFeature([GuessLocation]), TypeOrmModule.forFeature([User])]
+  imports: [UserModule, TypeOrmModule.forFeature([Location, GuessLocation])]
 })
 export class LocationModule {}
