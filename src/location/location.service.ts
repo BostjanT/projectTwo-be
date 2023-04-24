@@ -1,5 +1,4 @@
 import { Injectable, Logger } from '@nestjs/common';
-import { UserService } from 'src/user/user.service';
 import { Location } from 'src/entities/location.entity';
 import { User } from 'src/entities/user.entity';
 import { LocationInfo } from './dto/locationInfo.dto';
@@ -10,12 +9,12 @@ import { GuessLocation } from 'src/entities/guess.entity';
 @Injectable()
 export class LocationService {
   private logger = new Logger('LocationService');
-  
+
   @InjectRepository(Location)
   private readonly locationRepository: Repository<Location>;
   @InjectRepository(GuessLocation)
   private readonly guessRepository: Repository<GuessLocation>;
-  
+
   //create and save location
   async createLocation(user: User, locationInfo: LocationInfo): Promise<Location> {
     const { latitude, longitude, image } = locationInfo;

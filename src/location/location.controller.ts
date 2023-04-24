@@ -1,4 +1,4 @@
-import { Controller, Get, Param, UseGuards, Post, Body, Patch, Delete } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Patch, Post, UseGuards } from '@nestjs/common';
 import { LocationService } from './location.service';
 import { Location } from 'src/entities/location.entity';
 import { AuthGuard } from '@nestjs/passport';

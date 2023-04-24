@@ -5,7 +5,6 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Location } from 'src/entities/location.entity';
 import { GuessLocation } from 'src/entities/guess.entity';
 import { UserModule } from 'src/user/user.module';
-import { User } from 'src/entities/user.entity';
 
 @Module({
   providers: [LocationService],

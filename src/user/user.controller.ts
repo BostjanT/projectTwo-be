@@ -4,6 +4,7 @@ import { UserService } from './user.service';
 import { CurrentUser } from '../auth/current-user.decorator';
 import { User } from 'src/entities/user.entity';
 import { SignUpDto } from 'src/auth/dto/SignUpDto.dto';
+
 @Controller('user')
 export class UserController {
   constructor(private userService: UserService) {}
