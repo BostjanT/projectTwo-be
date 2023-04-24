@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { Email } from 'src/entities/email.entity';
 import { GuessLocation } from 'src/entities/guess.entity';
 import { Location } from 'src/entities/location.entity';
 import { User } from 'src/entities/user.entity';
@@ -17,14 +18,14 @@ import { User } from 'src/entities/user.entity';
         username: configService.get<string>('DB_USERNAME'),
         password: configService.get<string>('DB_PASSWORD'),
         database: configService.get<string>('DB_DATABASE'),
-        entities: [User, Location, GuessLocation],
+        entities: [User, Location, GuessLocation, Email],
         synchronize: true,
-        autoLoadEntities: true,
+        autoLoadEntities: true
       }),
-      inject: [ConfigService],
-    }),
+      inject: [ConfigService]
+    })
   ],
   controllers: [],
-  providers: [],
+  providers: []
 })
 export class TypeOrmConfig {}

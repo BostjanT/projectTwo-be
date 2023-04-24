@@ -22,9 +22,9 @@ export class User {
   @Column()
   locationId: string;
 
-  @OneToMany(() => GuessLocation, (guessLocation) => guessLocation.user, { onUpdate: 'CASCADE', onDelete: 'RESTRICT' })
+  @OneToMany(() => GuessLocation, (guessLocation) => guessLocation.userId, { onUpdate: 'CASCADE', onDelete: 'RESTRICT' })
   guessLocation: GuessLocation[];
 
-  @OneToMany(() => Location, (location) => location.user, { onUpdate: 'CASCADE', onDelete: 'RESTRICT' })
+  @OneToMany(() => Location, (location) => location.userId, { onUpdate: 'CASCADE', onDelete: 'RESTRICT' })
   location: Location[];
 }

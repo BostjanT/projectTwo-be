@@ -14,7 +14,7 @@ export class GuessLocation {
   longitude: string;
 
   @Column()
-  distance: string;
+  distance: number;
 
   @Column()
   timeCreated: Date;
